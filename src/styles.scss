@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '@angular/material/theming';
+@include mat-core();
+@import './styles/colors';
+
+body {
+  margin: 0;
+}
+
+html, body { height: 100% !important }
+
+.spinner-container {
+  position: fixed;
+  height: 300px;
+  width: 345px;
+  display: flex;
+  background: white;
+  z-index: 1;
+  opacity: 0.5;
+  justify-content: center;
+  max-width: 350px;
+  margin: 70px auto 0 auto;
+}

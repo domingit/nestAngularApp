@@ -1,9 +1,10 @@
 {
   "name": "nest-app",
   "version": "0.0.0",
+  "license": "myself",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve  --proxy-config ./proxy.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -11,13 +12,23 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.0",
+    "@angular/cdk": "^16.2.12",
     "@angular/common": "^16.2.0",
     "@angular/compiler": "^16.2.0",
     "@angular/core": "^16.2.0",
     "@angular/forms": "^16.2.0",
+    "@angular/material": "^16.2.12",
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@nestjs/common": "^8.4.7",
+    "@nestjs/core": "^8.4.7",
+    "@nestjs/platform-express": "^8.4.7",
+    "@ngrx/effects": "^16.3.0",
+    "@ngrx/store": "^16.3.0",
+    "@ngrx/store-devtools": "^16.3.0",
+    "body-parser": "^1.20.2",
+    "class-validator": "^0.14.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

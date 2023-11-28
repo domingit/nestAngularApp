@@ -1,0 +1,91 @@
+
+
+<ng-container *ngIf="((isMobile$ | async) || (isSmallScreen$ | async)); else Desktop">
+    <ng-container *ngTemplateOutlet="Mobile"></ng-container>
+</ng-container>
+
+<ng-template #Desktop>
+    <mat-toolbar color="primary">
+        <!-- Logo/Home -->
+        <button mat-button routerLink="/home">
+            <span>Home</span>
+        </button>
+    
+        <!-- Course Tab -->
+        <button mat-button routerLink="/courses">
+            <span>Courses</span>
+        </button>
+    
+        <!-- Spacer to push login/logout/profile to the right -->
+        <span class="spacer"></span>
+    
+        <!-- Login/Logout/Profile -->
+        <ng-container *ngIf="isLoggedIn$ | async; else loginSection">
+            <!-- Profile and Logout -->
+            <span class="profile-section">
+            <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <mat-menu #profileMenu="matMenu">
+                <button mat-menu-item>Profile</button>
+                <button mat-menu-item (click)="onLogout()">Logout</button>
+            </mat-menu>
+            </span>
+        </ng-container>
+        <ng-template #loginSection>
+            <!-- Login -->
+            <button mat-button routerLink="/login">
+                <mat-icon>account_circle</mat-icon>
+                <span>Login</span>
+            </button>
+        </ng-template>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</ng-template>
+
+<ng-template #Mobile>
+    <div class="mobile-menu" fxHide.gt-sm>
+        <mat-toolbar color="primary">
+          <button mat-icon-button (click)="toggleMenu()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span class="menu-title">Nest app</span>
+        </mat-toolbar>
+        <mat-sidenav-container class="mobile-container">
+          <mat-sidenav #sidenav mode="over" (opened)="onMenuOpened()" (closed)="onMenuClosed()">
+            <mat-nav-list>
+              <a mat-list-item *ngFor="let item of menuItems" routerLink="{{ item.link }}">
+                <mat-icon>{{ item.icon }}</mat-icon>
+                <span>{{ item.label }}</span>
+              </a>
+
+
+              <ng-container *ngIf="isLoggedIn$ | async; else loginSection">
+                <a mat-list-item>
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Profile</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon>account_circle</mat-icon>
+                    <span mat-menu-item (click)="onLogout()">Logout</span>
+                </a>
+            </ng-container>
+            <ng-template #loginSection>
+                <!-- Login -->
+                <a mat-list-item routerLink="/login">
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Login</span>
+                </a>
+            </ng-template>
+
+
+
+            </mat-nav-list>
+          </mat-sidenav>
+          <mat-sidenav-content>
+            <router-outlet></router-outlet>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
+      
+</ng-template>

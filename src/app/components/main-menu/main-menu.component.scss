@@ -1,0 +1,25 @@
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  @media (min-width: 600px) {
+    .mat-sidenav-container {
+      display: none;
+    }
+  }
+
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .menu-items.open {
+    display: flex;
+  }
+
+.mobile-menu {
+    min-height: 80vw;
+}

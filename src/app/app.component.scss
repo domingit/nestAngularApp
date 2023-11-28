@@ -1,0 +1,40 @@
+main {
+    margin: 30px;
+}
+
+.menu-button {
+    background: #e1234e;
+    color: white;
+    border: none;
+    cursor:pointer;
+    outline:none;
+}
+
+
+.spinner-container {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.mat-tab-label {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .mat-tab-label {
+    font-size: 12px;
+  }
+}
+
+.mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .spacer {
+    flex-grow: 1;
+  }
+  
+::ng-deep .mat-drawer-container {
+    min-height: 80vw;
+}

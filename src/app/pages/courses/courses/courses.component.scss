@@ -1,0 +1,72 @@
+
+
+.title {
+    text-align: center;
+    margin-right: 15px;
+
+}
+
+@media(max-width: 650px) {
+  .courses-panel {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+@media(min-width: 650px) {
+  .courses-panel {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .courses-panel ::ng-deep mat-card {
+    width: calc(50% - 20px);
+    display: inline-flex;
+  }
+
+  .courses-panel ::ng-deep mat-card-header {
+    height: 65px;
+  }
+
+  .courses-panel ::ng-deep mat-card-content {
+    height: 85px;
+  }
+
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media(min-width: 1000px) {
+  .courses-panel {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.counters {
+    display: flex;
+}
+
+.filler {
+    flex: 1 1 auto;
+}
+
+h2 {
+  font-family: "Roboto";
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.spinner-container {
+  margin-top: 100px;
+}

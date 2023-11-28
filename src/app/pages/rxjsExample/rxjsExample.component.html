@@ -1,0 +1,30 @@
+<div class="rxjs-content">    
+    <h1 name="title"></h1>
+    <p>
+        Start editing to see some magic happen :)
+    </p>
+    <div>
+        <form [formGroup]="form">
+            <label>
+        <input name="operator" type="radio" value="switchMap" formControlName="operator">
+        <span>switchMap</span>
+    </label>
+            <label>
+        <input name="operator" type="radio" value="concatMap" formControlName="operator">
+        <span>concatMap</span>
+    </label>
+            <label>
+        <input  name="operator" type="radio" value="mergeMap" formControlName="operator">
+        <span>mergeMap</span>
+    </label>
+            <label>
+        <input  name="operator" type="radio" value="exhaustMap" formControlName="operator">
+        <span>exhaustMap</span>
+    </label>
+
+        </form>
+        <br/>
+
+        <button (click)="fireEvent()" type="button" [disabled]="form.invalid">Fire TWO Events</button>
+    </div>
+</div>
